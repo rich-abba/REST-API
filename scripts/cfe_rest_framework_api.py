@@ -16,8 +16,8 @@ headers = {
 }
 
 data = {
-    'username': 'cfe',
-    'password': 'learncode',
+    'username': 'admin',
+    'password': 'admin',
 }
 
 r = requests.post(AUTH_ENDPOINT, data=json.dumps(data), headers=headers)
@@ -56,27 +56,27 @@ with open(image_path, 'rb') as image:
 
 
 
-# AUTH_ENDPOINT = "http://127.0.0.1:8000/api/auth/register/"
-# REFRESH_ENDPOINT = AUTH_ENDPOINT + "refresh/"
-# ENDPOINT = "http://127.0.0.1:8000/api/status/"
+AUTH_ENDPOINT = "http://127.0.0.1:8000/api/auth/register/"
+REFRESH_ENDPOINT = AUTH_ENDPOINT + "refresh/"
+ENDPOINT = "http://127.0.0.1:8000/api/status/"
 
-# image_path = os.path.join(os.getcwd(), "logo.jpg")
+image_path = os.path.join(os.getcwd(), "logo.jpg")
 
-# headers = {
-#     "Content-Type": "application/json",
-#     "Authorization": "JWT " + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwidXNlcm5hbWUiOiJjZmUxNiIsImV4cCI6MTUxMzIxMDMxOCwiZW1haWwiOiJjZmUxNkB0ZWFtY2ZlLmNvbSIsIm9yaWdfaWF0IjoxNTEzMjEwMDE4fQ.DXPPoCEwnV8uPjoCaFGqTenk8VG1m8tD3Xa0PBVZJ-o',
-# }
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": "JWT " + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiYXV0aE1ldGhvZCI6ImxvY2FsIiwiaWF0IjoxNzM5OTIwNDE0fQo.VOLcg-9Rty4Tz0mavrSRkqmv7AAEtsno_JgSM4xlLgM',
+}
 
-# data = {
-#     'username': 'cfe17',
-#     'email': 'cfe17@teamcfe.com',
-#     'password': 'learncode',
-#     'password2': 'learncode'
-# }
+data = {
+    'username': 'user',
+    'email': 'user@example.com',
+    'password': 'user123',
+    'password2': 'user123'
+}
 
-# r = requests.post(AUTH_ENDPOINT, data=json.dumps(data), headers=headers)
-# token = r.json() #['token']
-# print(token)
+r = requests.post(AUTH_ENDPOINT, data=json.dumps(data), headers=headers)
+token = r.json() #['token']
+print(token)
 
 # refresh_data = {
 #     'token': token
